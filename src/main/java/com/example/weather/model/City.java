@@ -2,43 +2,29 @@ package com.example.weather.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class City {
-    private String name;
-    private double latitude;
-    private double longitude;
-
-    public City() {}
-
-    public City(String name, double latitude, double longitude) {
-        this.name = name;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
-
-    @JsonProperty("name")
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @JsonProperty("latitude")
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    @JsonProperty("longitude")
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+/**
+ * Immutable city data using Java 14+ Record pattern.
+ * Records provide automatic equals(), hashCode(), toString(), and accessors.
+ */
+public record City(
+    @JsonProperty("name") String name,
+    @JsonProperty("latitude") double latitude,
+    @JsonProperty("longitude") double longitude
+) {
+    
+    /**
+     * Compact constructor with validation for Java records.
+     * Ensures data integrity at construction time.
+     */
+    public City {
+        if (name == null || name.isBlank()) {
+            throw new IllegalArgumentException("City name cannot be null or blank");
+        }
+        if (latitude < -90 || latitude > 90) {
+            throw new IllegalArgumentException("Latitude must be between -90 and 90");
+        }
+        if (longitude < -180 || longitude > 180) {
+            throw new IllegalArgumentException("Longitude must be between -180 and 180");
+        }
     }
 }
