@@ -65,6 +65,21 @@ Palauttaa säätiedot määritetylle kaupungille.
 - 71-77: Lumisade
 - 80-99: Ukkonen
 
+## Kehitysympäristön asennus
+
+Tämä projekti on konfiguroitu käyttämään Java 21:tä. Käytä VS Code Dev Containersia helpompaa kehitysympäristön asennusta varten.
+
+### Dev Container (suositeltu)
+1. Avaa projekti VS Codessa
+2. Asenna "Dev Containers" -laajennus
+3. Paina `Ctrl+Shift+P` ja valitse "Dev Containers: Reopen in Container"
+4. Kontti lataa Java 21:n ja kaikki tarvittavat työkalut automaattisesti
+
+### Manuaalinen asennus
+Varmista että sinulla on:
+- Java 21 JDK
+- Apache Maven 3.8+
+
 ## Sovelluksen käynnistäminen
 
 ### Kehitysmoodi
