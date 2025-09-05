@@ -1,7 +1,7 @@
 package com.example.weather.resource;
 
 import com.example.weather.model.WeatherData;
-import com.example.weather.service.MockWeatherService;
+import com.example.weather.service.WeatherServiceSelector;
 import com.example.weather.service.CityService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -17,7 +17,7 @@ import java.util.Optional;
 public class WeatherResource {
 
     @Inject
-    MockWeatherService weatherService;
+    WeatherServiceSelector weatherService;
 
     @Inject
     CityService cityService;
