@@ -1,0 +1,9 @@
+com/example/weather/model/City.class
+com/example/weather/model/WeatherData.class
+com/example/weather/service/CityService.class
+com/example/weather/resource/WeatherResource.class
+com/example/weather/model/WeatherData$HourlyWeather.class
+com/example/weather/service/OpenMeteoClient.class
+com/example/weather/model/WeatherResponse.class
+com/example/weather/model/WeatherResponse$HourlyData.class
+com/example/weather/service/WeatherService.class
